@@ -1,0 +1,26 @@
+{
+  "name": "structural-adapter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node example/http-server.js",
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest --runInBand --config ./jest.config.js --watchAll",
+    "test:cov": "NODE_OPTIONS=--experimental-vm-modules npx jest --config ./jest.config.js --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anopszetex/structural-adapter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anopszetex/structural-adapter/issues"
+  },
+  "homepage": "https://github.com/anopszetex/structural-adapter#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
