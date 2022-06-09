@@ -12,7 +12,7 @@ import Character from '../../src/entities/character.js'
 import RickBRL from '../../src/business/integrations/rickBRL.js'
 
   describe('RickBRL', () => {
-    
+
     beforeEach(() => {
       jest.clearAllMocks()
     })
@@ -29,5 +29,15 @@ import RickBRL from '../../src/business/integrations/rickBRL.js'
       expect(result).toStrictEqual(expected)
     })
 
-    test.todo('getCharactersFromJSON should return an empty list if the API returns nothing')
+    test('getCharactersFromJSON should return an empty list if the API returns nothing', async () => {
+      const response = JSON.parse(await fs.readFile('./test/mocks/characters-empty.json'))
+      
+      const expected = response.results
+
+      jest.spyOn(axios, 'get').mockResolvedValue({ data: response })
+      
+      const result = await RickBRL.getCharactersFromJSON()
+
+      expect(result).toStrictEqual(expected)
+    })
   });
